@@ -1,0 +1,58 @@
+<app-header></app-header> 
+<!-- <div class="row">
+  <div class="col-sm-3">
+    <img src="../assets/images/pr2.jpg" class="card-img-top" />
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Canvas shoes for man</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="/cart" class="btn btn-primary" >Add to cart</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-3">
+    <img src="../assets/images/pr2.jpg" class="card-img-top" />
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Casuals for man</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="#" class="btn btn-primary">Add to cart</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-3">
+    <img src="../assets/images/pr2.jpg" class="card-img-top" />
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Running shoes  for man</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="#" class="btn btn-primary">Add to cart</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-3">
+    <img src="../assets/images/pr2.jpg" class="card-img-top" />
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Running shoes  for man</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="#" class="btn btn-primary">Add to cart</a>
+      </div>
+    </div>
+  </div>
+</div> -->
+<div class="container">
+  <div class="row">
+      <ng-container *ngFor="let item of productList">
+          <div class="card col-md-3">
+              <img src="{{item.image}}" alt="">
+              <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis; max-width: 100ch;">{{item.title}}</h5>
+              <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis; max-width: 100ch;">{{item.description}}</p>
+              <p><strong>Price:</strong>${{item.price}}</p>
+              <button class="btn btn-primary" (click)=addtocart(item)>Add to cart</button>
+          </div>
+      </ng-container>
+  </div>
+</div>
+
+<app-footer></app-footer> 
